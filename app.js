@@ -45,47 +45,55 @@ const money = (value, currency = "AUD") => new Intl.NumberFormat("en-AU", {
 
 const field = (card, name) => card.querySelector(`[data-field="${name}"]`);
 
-const progressPercent = (pick, asOf) => {
-  const opened = new Date(pick.openedAt).getTime();
-  const closes = new Date(pick.closesAt).getTime();
+const progressPercent = (observation, asOf) => {
+  const opened = new Date(observation.observedAt).getTime();
+  const closes = new Date(observation.reviewAt).getTime();
   const current = new Date(asOf).getTime();
   if (!Number.isFinite(opened + closes + current) || closes <= opened) return 0;
   return Math.max(0, Math.min(100, ((current - opened) / (closes - opened)) * 100));
 };
 
-const renderPick = (pick, asOf) => {
-  const card = cards.get(pick.horizon);
+const renderObservation = (observation, asOf) => {
+  const card = cards.get(observation.horizon);
   if (!card) return;
 
-  field(card, "duration").textContent = pick.durationLabel;
-  field(card, "status").textContent = pick.status === "open" ? "Paper trade open" : "Paper trade closed";
-  field(card, "symbol").textContent = `${pick.exchange}: ${pick.symbol}`;
-  field(card, "company").textContent = pick.companyName;
-  field(card, "sector").textContent = pick.sector;
-  field(card, "price").textContent = money(pick.entryPrice, pick.currency);
-  field(card, "picked-date").textContent = dateFormatter.format(new Date(pick.openedAt));
-  field(card, "confidence").textContent = `${Math.round(pick.confidence)}%`;
-  field(card, "progress").style.width = `${progressPercent(pick, asOf)}%`;
-  field(card, "closes").textContent = `Closes ${dateFormatter.format(new Date(pick.closesAt))}`;
+  field(card, "duration").textContent = observation.durationLabel;
+  field(card, "status").textContent = observation.status === "active" ? "Observation active" : "Observation complete";
+  field(card, "symbol").textContent = `${observation.exchange}: ${observation.symbol}`;
+  field(card, "company").textContent = observation.companyName;
+  field(card, "sector").textContent = observation.sector;
+  field(card, "price").textContent = money(observation.referencePrice, observation.currency);
+  field(card, "picked-date").textContent = dateFormatter.format(new Date(observation.observedAt));
+  field(card, "confidence").textContent = `${Math.round(observation.signalStrength)}%`;
+  field(card, "progress").style.width = `${progressPercent(observation, asOf)}%`;
+  field(card, "closes").textContent = `Review ${dateFormatter.format(new Date(observation.reviewAt))}`;
 };
 
 const renderModel = (data) => {
-  const closed = data.paperTrades.filter((trade) => trade.status === "closed");
-  const wins = closed.filter((trade) => trade.success === true).length;
-  const accuracy = closed.length ? (wins / closed.length) * 100 : null;
-
-  document.querySelector("#model-accuracy").textContent = accuracy === null ? "—" : `${accuracy.toFixed(1)}%`;
-  const demoLabel = data.mode === "live" ? "" : " demo";
-  document.querySelector("#model-record-detail").textContent = closed.length
-    ? `${wins} of ${closed.length} closed${demoLabel} paper trades`
-    : "Building a verified paper-trade record";
-
   const dataState = document.querySelector("#data-state");
-  const live = data.mode === "live";
-  dataState.classList.toggle("is-live", live);
-  dataState.lastChild.textContent = live ? " Live ASX data" : " Demo data";
+  const live = data.mode === "live" && data.observations?.length === 3 && data.asOf;
+  dataState.classList.toggle("is-live", Boolean(live));
+
+  if (!live) {
+    document.querySelector("#model-accuracy").textContent = "—";
+    document.querySelector("#model-record-detail").textContent = "No completed live observations";
+    dataState.lastChild.textContent = " Live feed pending";
+    document.querySelector("#last-updated").textContent = "Live market feed pending";
+    return;
+  }
+
+  const completed = data.outcomes.filter((outcome) => outcome.status === "complete");
+  const positive = completed.filter((outcome) => outcome.positive === true).length;
+  const outcomeRate = completed.length ? (positive / completed.length) * 100 : null;
+
+  document.querySelector("#model-accuracy").textContent = outcomeRate === null ? "—" : `${outcomeRate.toFixed(1)}%`;
+  document.querySelector("#model-record-detail").textContent = completed.length
+    ? `${positive} of ${completed.length} completed observations positive`
+    : "No completed live observations";
+
+  dataState.lastChild.textContent = " Live ASX feed";
   document.querySelector("#last-updated").textContent = `Updated ${dateTimeFormatter.format(new Date(data.asOf))}`;
-  data.picks.forEach((pick) => renderPick(pick, data.asOf));
+  data.observations.forEach((observation) => renderObservation(observation, data.asOf));
 };
 
 fetch("./api/recommendations.json", { cache: "no-store" })
@@ -95,7 +103,7 @@ fetch("./api/recommendations.json", { cache: "no-store" })
   })
   .then(renderModel)
   .catch(() => {
-    document.querySelector("#data-state").lastChild.textContent = " Demo data";
+    document.querySelector("#data-state").lastChild.textContent = " Live feed unavailable";
   });
 
 if ("serviceWorker" in navigator) {

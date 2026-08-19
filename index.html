@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#112928">
-  <meta name="description" content="TraderMate tracks one model pick for each market horizon and records every result as a paper trade.">
-  <meta property="og:title" content="TraderMate — three horizons, three picks">
-  <meta property="og:description" content="Short, mid and long-term model picks with a transparent paper-trade record.">
+  <meta name="description" content="A quantitative ASX market screen showing the highest-ranked model observation for each time horizon.">
+  <meta property="og:title" content="TraderMate — ASX horizon model">
+  <meta property="og:description" content="What the model sees now across short, mid and long horizons.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://langzonedev.github.io/TraderMate-Web/og-v2.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TraderMate — three horizons, three picks">
-  <meta name="twitter:description" content="A simple view of the model's current picks and paper-trade accuracy.">
+  <meta name="twitter:title" content="TraderMate — ASX horizon model">
+  <meta name="twitter:description" content="What the model sees now across short, mid and long horizons.">
   <meta name="twitter:image" content="https://langzonedev.github.io/TraderMate-Web/og-v2.png">
-  <title>TraderMate — model picks</title>
+  <title>TraderMate — ASX horizon model</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -24,89 +24,95 @@
       <span class="brand-mark" aria-hidden="true">TM</span>
       <span>TraderMate</span>
     </a>
-    <div class="model-record" aria-label="Model paper trade record">
-      <div>
-        <span class="record-label">Model accuracy</span>
-        <strong id="model-accuracy">75.0%</strong>
-      </div>
-      <span class="record-detail" id="model-record-detail">6 of 8 closed demo paper trades</span>
+    <div class="outcome-record" aria-label="Completed model observations">
+      <span>Historical outcome rate</span>
+      <strong id="model-accuracy">—</strong>
+      <small id="model-record-detail">No completed live observations</small>
     </div>
     <div class="topbar-actions">
-      <span class="data-state" id="data-state"><i aria-hidden="true"></i> Demo data</span>
+      <span class="data-state" id="data-state"><i aria-hidden="true"></i> Live feed pending</span>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Use dark theme" aria-pressed="false">◐</button>
     </div>
   </header>
 
   <main>
-    <section class="pick-grid" aria-label="Current model picks">
-      <article class="pick-card short" data-horizon="short">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p>ASX horizon model</p>
+        <h1 id="page-title">What the model sees now.</h1>
+      </div>
+      <span id="last-updated">Live market feed pending</span>
+    </section>
+
+    <section class="signal-grid" aria-label="Current model observations">
+      <article class="signal-card short" data-horizon="short">
         <div class="card-head">
-          <div><span class="horizon">Short</span><span class="duration" data-field="duration">30 days</span></div>
-          <span class="paper-state" data-field="status">Paper trade open</span>
+          <div><span class="horizon">Short</span><span class="duration" data-field="duration">30-day window</span></div>
+          <span class="tracking-state" data-field="status">Awaiting feed</span>
         </div>
-        <div class="pick-company">
-          <span class="ticker" data-field="symbol">DEMO-S</span>
-          <h2 data-field="company">Southbank Metals</h2>
-          <p data-field="sector">Materials</p>
+        <div class="company">
+          <span class="ticker" data-field="symbol">ASX: —</span>
+          <h2 data-field="company">Live observation pending</h2>
+          <p data-field="sector">No simulated record shown</p>
         </div>
-        <div class="price-row">
-          <div><span>Picked at</span><strong data-field="price">$12.48</strong></div>
-          <div><span>Picked</span><strong data-field="picked-date">19 Aug 2026</strong></div>
+        <div class="facts">
+          <div><span>Reference price</span><strong data-field="price">—</strong></div>
+          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
         </div>
-        <div class="card-foot">
-          <div class="confidence"><span>Model confidence</span><strong data-field="confidence">78%</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width: 18%"></i></div>
-          <span class="closes" data-field="closes">Closes 18 Sep 2026</span>
+        <div class="strength">
+          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
+          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
+          <span data-field="closes">Review date pending</span>
         </div>
       </article>
 
-      <article class="pick-card medium" data-horizon="medium">
+      <article class="signal-card medium" data-horizon="medium">
         <div class="card-head">
-          <div><span class="horizon">Mid</span><span class="duration" data-field="duration">6 months</span></div>
-          <span class="paper-state" data-field="status">Paper trade open</span>
+          <div><span class="horizon">Mid</span><span class="duration" data-field="duration">6-month window</span></div>
+          <span class="tracking-state" data-field="status">Awaiting feed</span>
         </div>
-        <div class="pick-company">
-          <span class="ticker" data-field="symbol">DEMO-M</span>
-          <h2 data-field="company">Mariner Health</h2>
-          <p data-field="sector">Health care</p>
+        <div class="company">
+          <span class="ticker" data-field="symbol">ASX: —</span>
+          <h2 data-field="company">Live observation pending</h2>
+          <p data-field="sector">No simulated record shown</p>
         </div>
-        <div class="price-row">
-          <div><span>Picked at</span><strong data-field="price">$28.16</strong></div>
-          <div><span>Picked</span><strong data-field="picked-date">19 Aug 2026</strong></div>
+        <div class="facts">
+          <div><span>Reference price</span><strong data-field="price">—</strong></div>
+          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
         </div>
-        <div class="card-foot">
-          <div class="confidence"><span>Model confidence</span><strong data-field="confidence">73%</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width: 8%"></i></div>
-          <span class="closes" data-field="closes">Closes 15 Feb 2027</span>
+        <div class="strength">
+          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
+          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
+          <span data-field="closes">Review date pending</span>
         </div>
       </article>
 
-      <article class="pick-card long" data-horizon="long">
+      <article class="signal-card long" data-horizon="long">
         <div class="card-head">
-          <div><span class="horizon">Long</span><span class="duration" data-field="duration">12 months</span></div>
-          <span class="paper-state" data-field="status">Paper trade open</span>
+          <div><span class="horizon">Long</span><span class="duration" data-field="duration">12-month window</span></div>
+          <span class="tracking-state" data-field="status">Awaiting feed</span>
         </div>
-        <div class="pick-company">
-          <span class="ticker" data-field="symbol">DEMO-L</span>
-          <h2 data-field="company">Redgum Systems</h2>
-          <p data-field="sector">Technology</p>
+        <div class="company">
+          <span class="ticker" data-field="symbol">ASX: —</span>
+          <h2 data-field="company">Live observation pending</h2>
+          <p data-field="sector">No simulated record shown</p>
         </div>
-        <div class="price-row">
-          <div><span>Picked at</span><strong data-field="price">$7.82</strong></div>
-          <div><span>Picked</span><strong data-field="picked-date">19 Aug 2026</strong></div>
+        <div class="facts">
+          <div><span>Reference price</span><strong data-field="price">—</strong></div>
+          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
         </div>
-        <div class="card-foot">
-          <div class="confidence"><span>Model confidence</span><strong data-field="confidence">69%</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width: 4%"></i></div>
-          <span class="closes" data-field="closes">Closes 19 Aug 2027</span>
+        <div class="strength">
+          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
+          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
+          <span data-field="closes">Review date pending</span>
         </div>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>Model-generated general market information only. Paper trades are simulated and do not include fees, tax or slippage. TraderMate does not consider your objectives, financial situation or needs. Consider whether any information is appropriate for you before acting.</p>
-    <p id="last-updated">Updated 19 Aug 2026 · 9:30 am ACST</p>
+    <p>Quantitative market information only. Model observations are impersonal and do not consider your objectives, financial situation or needs. They are not instructions to buy, sell or hold a financial product. Consider whether the information is appropriate for you before acting.</p>
+    <p>ASX market data requires an approved provider feed.</p>
   </footer>
 </body>
 </html>
