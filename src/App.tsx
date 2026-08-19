@@ -16,6 +16,7 @@ const EMPTY_SNAPSHOT: MarketSnapshot = {
 };
 
 export default function App() {
+  const localPreview = import.meta.env.VITE_LOCAL_PREVIEW === "true";
   const [horizon, setHorizon] = useState<Horizon>("short");
   const [snapshot, setSnapshot] = useState<MarketSnapshot>(EMPTY_SNAPSHOT);
   const [loading, setLoading] = useState(true);
@@ -57,7 +58,10 @@ export default function App() {
     <>
       <header className="hero">
         <div className="hero__inner shell">
-          <div className="topline"><Brand /></div>
+          <div className="topline">
+            <Brand />
+            {localPreview && <span className="local-preview-badge">Local only</span>}
+          </div>
           <HorizonPicker selected={horizon} onSelect={setHorizon} />
           <div className="hero__copy">
             <p className="eyebrow">{selected.kicker}</p>
