@@ -1,10 +1,10 @@
-const CACHE_NAME = "tradermate-prototype-v2";
+const CACHE_NAME = "tradermate-prototype-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
-  "./og.png",
+  "./og-v2.png",
   "./manifest.webmanifest",
   "./api/recommendations.json"
 ];

@@ -1,21 +1,60 @@
 {
+  "schemaVersion": 2,
+  "mode": "illustrative",
   "asOf": "2026-08-19T00:00:00Z",
-  "status": "illustrative",
-  "recommendations": [
+  "modelVersion": "prototype-0.2",
+  "picks": [
     {
-      "id": "demo-short-1",
-      "symbol": "DEMO-01",
+      "horizon": "short",
+      "durationLabel": "30 days",
+      "symbol": "DEMO-S",
       "exchange": "ASX",
-      "companyName": "Atlas Harbour",
-      "horizon": { "label": "Short term", "range": "2–6 weeks" },
-      "confidence": { "label": "Strong fictional evidence", "percent": 78 },
-      "weight": { "label": "Balanced", "percent": 25 },
-      "summary": "Recent fictional operational momentum and improving demand indicators support a near-term watchlist position.",
-      "signals": ["Momentum", "Demand", "Quality"],
-      "risks": ["Commodity sensitivity", "Short-horizon volatility"],
-      "asOf": "2026-08-19T00:00:00Z",
-      "validUntil": "2026-08-20T00:00:00Z"
+      "companyName": "Southbank Metals",
+      "sector": "Materials",
+      "currency": "AUD",
+      "entryPrice": 12.48,
+      "confidence": 78,
+      "openedAt": "2026-08-19T00:00:00Z",
+      "closesAt": "2026-09-18T00:00:00Z",
+      "status": "open"
+    },
+    {
+      "horizon": "medium",
+      "durationLabel": "6 months",
+      "symbol": "DEMO-M",
+      "exchange": "ASX",
+      "companyName": "Mariner Health",
+      "sector": "Health care",
+      "currency": "AUD",
+      "entryPrice": 28.16,
+      "confidence": 73,
+      "openedAt": "2026-08-19T00:00:00Z",
+      "closesAt": "2027-02-15T00:00:00Z",
+      "status": "open"
+    },
+    {
+      "horizon": "long",
+      "durationLabel": "12 months",
+      "symbol": "DEMO-L",
+      "exchange": "ASX",
+      "companyName": "Redgum Systems",
+      "sector": "Technology",
+      "currency": "AUD",
+      "entryPrice": 7.82,
+      "confidence": 69,
+      "openedAt": "2026-08-19T00:00:00Z",
+      "closesAt": "2027-08-19T00:00:00Z",
+      "status": "open"
     }
   ],
-  "disclaimer": "Illustrative prototype data. Not financial advice."
+  "paperTrades": [
+    { "id": "demo-001", "status": "closed", "success": true },
+    { "id": "demo-002", "status": "closed", "success": true },
+    { "id": "demo-003", "status": "closed", "success": false },
+    { "id": "demo-004", "status": "closed", "success": true },
+    { "id": "demo-005", "status": "closed", "success": true },
+    { "id": "demo-006", "status": "closed", "success": false },
+    { "id": "demo-007", "status": "closed", "success": true },
+    { "id": "demo-008", "status": "closed", "success": true }
+  ]
 }
