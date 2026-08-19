@@ -1,6 +1,6 @@
 # Market Horizons
 
-Public-facing prototype for Market Horizons: one quantitative market observation for each of the short, mid and long horizons.
+Public-facing TypeScript prototype for Market Horizons: four quantitative market observations for each of the short, mid and long horizons.
 
 Published with GitHub Pages at <https://langzonedev.github.io/TraderMate-Web/>.
 
@@ -13,15 +13,16 @@ Published with GitHub Pages at <https://langzonedev.github.io/TraderMate-Web/>.
 
 ## Run locally
 
-Open `index.html` in a modern browser. No installation, build step, or environment variables are required.
+Install dependencies with `npm install`, then run `npm run dev`. No environment variables are required for the public shell.
 
 ## Current product surface
 
-- Exactly three compact observation cards: short, mid and long, arranged two-wide on desktop.
+- Short, mid and long segmented views with four compact observation cards in each view.
 - Reference price, observation window, signal strength and review date.
 - Historical outcome rate calculated only from completed live observations.
-- Responsive layout with light and dark themes.
-- Offline app-shell caching after the first successful visit.
+- Responsive one-, two- and four-column layouts.
+- Light and dark themes selected exclusively through the browser or operating-system preference.
+- React and TypeScript source built with Vite.
 
 ## Deployment
 
@@ -29,4 +30,4 @@ Changes merged to `main` deploy through `.github/workflows/pages.yml`. The workf
 
 ## Before connecting live data
 
-The private Market Horizons workflow can replace `api/recommendations.json` with a sanitised live projection. EODHD is only the first adapter; the private architecture is designed to combine licensed price feeds with official Australian entity and macro data while retaining source provenance and deduplicating shared upstream feeds. Activation requires provider tokens, a narrowly scoped publication token, provider redistribution rights, and legal/licensing approval for named model observations. The browser never receives credentials, raw licensed data or private scoring state.
+The private Market Horizons workflow can replace `public/api/recommendations.json` with a sanitised live projection. EODHD is only the first adapter; the private architecture is designed to combine licensed price feeds with official Australian entity and macro data while retaining source provenance and deduplicating shared upstream feeds. Activation requires provider tokens, a narrowly scoped publication token, provider redistribution rights, and legal/licensing approval for named model observations. The browser never receives credentials, raw licensed data or private scoring state.

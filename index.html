@@ -3,116 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eef7fb">
-  <meta name="description" content="Market Horizons presents a quantitative ASX market view across short, medium and long time horizons.">
-  <meta property="og:title" content="Market Horizons — ASX horizon model">
-  <meta property="og:description" content="One market. Three time horizons.">
+  <meta name="theme-color" content="#dceef8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141b2d" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Four quantitative ASX market observations across short, mid and long time horizons.">
+  <meta property="og:title" content="Market Horizons — one market, three time horizons">
+  <meta property="og:description" content="Four current market observations for every time horizon.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://langzonedev.github.io/TraderMate-Web/og-v2.png">
+  <meta property="og:image" content="https://langzonedev.github.io/TraderMate-Web/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Market Horizons — ASX horizon model">
-  <meta name="twitter:description" content="One market. Three time horizons.">
-  <meta name="twitter:image" content="https://langzonedev.github.io/TraderMate-Web/og-v2.png">
-  <title>Market Horizons — ASX horizon model</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <meta name="twitter:title" content="Market Horizons — one market, three time horizons">
+  <meta name="twitter:description" content="Four current market observations for every time horizon.">
+  <meta name="twitter:image" content="https://langzonedev.github.io/TraderMate-Web/og.png">
+  <title>Market Horizons — ASX market observations</title>
+  <link rel="manifest" href="%BASE_URL%manifest.webmanifest">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="Market Horizons home">
-      <span class="brand-mark" aria-hidden="true">MH</span>
-      <span>Market Horizons</span>
-    </a>
-    <div class="outcome-record" aria-label="Completed model observations">
-      <span>Historical outcome rate</span>
-      <strong id="model-accuracy">—</strong>
-      <small id="model-record-detail">No completed live observations</small>
-    </div>
-    <div class="topbar-actions">
-      <span class="data-state" id="data-state"><i aria-hidden="true"></i> Live feed pending</span>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Use dark theme" aria-pressed="false">◐</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="page-title">
-      <div>
-        <p>ASX horizon model</p>
-        <h1 id="page-title">One market. Three time horizons.</h1>
-      </div>
-      <span id="last-updated">Live market feed pending</span>
-    </section>
-
-    <section class="signal-grid" aria-label="Current model observations">
-      <article class="signal-card short" data-horizon="short">
-        <div class="card-head">
-          <div><span class="horizon">Short</span><span class="duration" data-field="duration">30-day window</span></div>
-          <span class="tracking-state" data-field="status">Awaiting feed</span>
-        </div>
-        <div class="company">
-          <span class="ticker" data-field="symbol">ASX: —</span>
-          <h2 data-field="company">Live observation pending</h2>
-          <p data-field="sector">No simulated record shown</p>
-        </div>
-        <div class="facts">
-          <div><span>Reference price</span><strong data-field="price">—</strong></div>
-          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
-        </div>
-        <div class="strength">
-          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
-          <span data-field="closes">Review date pending</span>
-        </div>
-      </article>
-
-      <article class="signal-card medium" data-horizon="medium">
-        <div class="card-head">
-          <div><span class="horizon">Mid</span><span class="duration" data-field="duration">6-month window</span></div>
-          <span class="tracking-state" data-field="status">Awaiting feed</span>
-        </div>
-        <div class="company">
-          <span class="ticker" data-field="symbol">ASX: —</span>
-          <h2 data-field="company">Live observation pending</h2>
-          <p data-field="sector">No simulated record shown</p>
-        </div>
-        <div class="facts">
-          <div><span>Reference price</span><strong data-field="price">—</strong></div>
-          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
-        </div>
-        <div class="strength">
-          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
-          <span data-field="closes">Review date pending</span>
-        </div>
-      </article>
-
-      <article class="signal-card long" data-horizon="long">
-        <div class="card-head">
-          <div><span class="horizon">Long</span><span class="duration" data-field="duration">12-month window</span></div>
-          <span class="tracking-state" data-field="status">Awaiting feed</span>
-        </div>
-        <div class="company">
-          <span class="ticker" data-field="symbol">ASX: —</span>
-          <h2 data-field="company">Live observation pending</h2>
-          <p data-field="sector">No simulated record shown</p>
-        </div>
-        <div class="facts">
-          <div><span>Reference price</span><strong data-field="price">—</strong></div>
-          <div><span>Observed</span><strong data-field="picked-date">—</strong></div>
-        </div>
-        <div class="strength">
-          <div><span>Signal strength</span><strong data-field="confidence">—</strong></div>
-          <div class="progress" aria-hidden="true"><i data-field="progress" style="width:0"></i></div>
-          <span data-field="closes">Review date pending</span>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>Quantitative market information only. Model observations are impersonal and do not consider your objectives, financial situation or needs. They are not instructions to buy, sell or hold a financial product. Consider whether the information is appropriate for you before acting.</p>
-    <p>ASX market data requires an approved provider feed.</p>
-  </footer>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

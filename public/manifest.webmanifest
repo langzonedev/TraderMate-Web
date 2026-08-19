@@ -1,0 +1,10 @@
+{
+  "name": "Market Horizons",
+  "short_name": "Horizons",
+  "description": "Four quantitative ASX market observations across three time horizons.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#dceef8"
+}
