@@ -7,7 +7,7 @@ import { formatDateTime } from "./format";
 import type { Horizon, MarketSnapshot, ObservationCollection } from "./types";
 
 const EMPTY_SNAPSHOT: MarketSnapshot = {
-  schemaVersion: 5,
+  schemaVersion: 6,
   mode: "pending",
   asOf: null,
   modelVersion: "price-baseline-0.1",

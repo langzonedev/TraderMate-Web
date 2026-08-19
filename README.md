@@ -20,6 +20,7 @@ Install dependencies with `npm install`, then run `npm run dev`. No environment 
 - Short, mid and long segmented views with four Current observations per horizon.
 - A Tracking view for displaced observations that remain active until their original review dates.
 - Reference price, observation window, signal strength and review date.
+- An accessible in-card explanation revealing the strongest recorded reason behind each selection.
 - Historical outcome rate calculated only from completed live observations.
 - Responsive one-, two- and four-column layouts.
 - Light and dark themes selected exclusively through the browser or operating-system preference.

@@ -13,6 +13,7 @@ export interface MarketObservation {
   currency: string;
   referencePrice: number;
   signalStrength: number;
+  reason: string;
   observedAt: string;
   reviewAt: string;
   status: "active" | "complete";
