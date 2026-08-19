@@ -1,4 +1,4 @@
-const CACHE_NAME = "tradermate-prototype-v4";
+const CACHE_NAME = "market-horizons-prototype-v5";
 const APP_SHELL = [
   "./",
   "./index.html",

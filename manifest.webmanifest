@@ -1,7 +1,7 @@
 {
-  "name": "TraderMate",
-  "short_name": "TraderMate",
-  "description": "A quantitative ASX market screen showing one model observation per horizon.",
+  "name": "Market Horizons",
+  "short_name": "Horizons",
+  "description": "A quantitative ASX market view across three time horizons.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

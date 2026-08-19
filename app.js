@@ -10,14 +10,14 @@ const setTheme = (theme) => {
   themeToggle.setAttribute("aria-label", dark ? "Use light theme" : "Use dark theme");
 };
 
-const savedTheme = localStorage.getItem("tradermate-theme");
+const savedTheme = localStorage.getItem("market-horizons-theme") || localStorage.getItem("tradermate-theme");
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 setTheme(savedTheme || preferredTheme);
 
 themeToggle.addEventListener("click", () => {
   const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   setTheme(theme);
-  localStorage.setItem("tradermate-theme", theme);
+  localStorage.setItem("market-horizons-theme", theme);
 });
 
 const dateFormatter = new Intl.DateTimeFormat("en-AU", {
