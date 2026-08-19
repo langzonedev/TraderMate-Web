@@ -1,7 +1,7 @@
 {
   "name": "TraderMate",
   "short_name": "TraderMate",
-  "description": "Short, mid and long-term model picks with a transparent paper-trade record.",
+  "description": "A quantitative ASX market screen showing one model observation per horizon.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
