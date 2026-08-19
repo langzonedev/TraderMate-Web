@@ -83,6 +83,13 @@ button:focus-visible, summary:focus-visible, a:focus-visible {
   letter-spacing: -.04em;
 }
 .header-actions { display: flex; align-items: center; gap: 1rem; }
+.header-link {
+  color: var(--ink-soft);
+  font-size: .78rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.header-link:hover { color: var(--ink); }
 .market-status {
   display: inline-flex;
   align-items: center;
@@ -191,6 +198,49 @@ h1 em { color: var(--accent); font-weight: 500; }
   border-radius: 50%;
   font-weight: 850;
 }
+
+.pulse {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 3.5rem;
+  align-items: end;
+  margin-bottom: 82px;
+}
+.pulse-heading > p:last-child,
+.stack-heading > p:last-child {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: .9rem;
+}
+.pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.pulse-grid article { padding: 1.3rem; }
+.pulse-grid article + article { border-left: 1px solid var(--line); }
+.pulse-grid span {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--ink-soft);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.pulse-grid strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.pulse-grid small { color: var(--ink-soft); font-family: inherit; font-size: .7rem; }
+.pulse-grid p { margin: .55rem 0 0; color: var(--ink-soft); font-size: .73rem; }
 
 .ideas-section { padding-bottom: 96px; }
 .section-heading {
@@ -319,6 +369,36 @@ details[open] summary span { transform: rotate(45deg); }
 .details-body { padding-top: .5rem; color: var(--ink-soft); font-size: .78rem; }
 .details-body p { margin: .55rem 0; }
 
+.research-stack {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 4rem;
+  padding: 84px 0 96px;
+  border-top: 1px solid var(--line);
+}
+.stack-heading { position: sticky; top: 2rem; align-self: start; }
+.stack-list { border-top: 1px solid var(--line); }
+.stack-list article {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.stack-number { color: var(--accent); font-family: Georgia, serif; font-size: 1.15rem; }
+.stack-list h3 { margin: 0; font-size: .94rem; }
+.stack-list p { margin: .25rem 0 0; color: var(--ink-soft); font-size: .8rem; }
+.stack-state {
+  padding: .3rem .52rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: .62rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .method {
   display: grid;
   grid-template-columns: .8fr 1.2fr;
@@ -354,6 +434,8 @@ footer p:last-child { text-align: right; }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 64px; }
   .snapshot { max-width: 430px; }
   .section-heading { align-items: start; flex-direction: column; }
+  .pulse, .research-stack { grid-template-columns: 1fr; gap: 2rem; }
+  .stack-heading { position: static; }
   .method { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.4rem; }
   footer { grid-template-columns: 1fr; }
   footer p:last-child { text-align: left; }
@@ -362,12 +444,19 @@ footer p:last-child { text-align: right; }
   .site-header, main, footer { width: min(100% - 24px, 1180px); }
   .site-header { min-height: 72px; }
   .market-status { display: none; }
+  .header-link { display: none; }
   h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
   .hero { padding: 52px 0 36px; }
   .notice { align-items: flex-start; margin-bottom: 54px; }
+  .pulse { margin-bottom: 62px; }
+  .pulse-grid { grid-template-columns: 1fr; }
+  .pulse-grid article + article { border-left: 0; border-top: 1px solid var(--line); }
   .filters { width: 100%; overflow-x: auto; }
   .filter { flex: 1; }
   .idea-grid { grid-template-columns: 1fr; }
+  .research-stack { padding: 62px 0; }
+  .stack-list article { grid-template-columns: 34px 1fr; }
+  .stack-state { grid-column: 2; justify-self: start; }
   .method { padding: 2rem 1.4rem; }
   .method-grid { grid-template-columns: 1fr; }
   .method-grid span { margin-bottom: .5rem; }

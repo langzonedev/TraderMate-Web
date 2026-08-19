@@ -1,0 +1,10 @@
+{
+  "name": "TraderMate",
+  "short_name": "TraderMate",
+  "description": "A calm, explainable Australian-equity research dashboard prototype.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f0e8",
+  "theme_color": "#132c2b"
+}
