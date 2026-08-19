@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132c2b">
+  <meta name="description" content="TraderMate public dashboard concept using illustrative Australian-equity research ideas.">
+  <title>TraderMate — clearer market research</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#ideas">Skip to ideas</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="TraderMate home">
+      <span class="brand-mark" aria-hidden="true">TM</span>
+      <span>TraderMate</span>
+    </a>
+    <div class="header-actions">
+      <span class="market-status"><span aria-hidden="true"></span> Illustrative mode</span>
+      <button class="icon-button" type="button" id="theme-toggle" aria-label="Use dark theme" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Research, without the rabbit holes</p>
+        <h1 id="page-title">Four ideas.<br><em>One clear view.</em></h1>
+        <p class="lede">A calm summary of fictional Australian-share research across different time horizons—so you can understand the case, the confidence, and the risks.</p>
+      </div>
+
+      <aside class="snapshot" aria-label="Research snapshot">
+        <div>
+          <span class="snapshot-label">Research snapshot</span>
+          <strong>19 Aug 2026 · 9:30 am ACST</strong>
+        </div>
+        <span class="freshness"><span aria-hidden="true">✓</span> Demo data current</span>
+      </aside>
+    </section>
+
+    <section class="notice" aria-label="Important prototype notice">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <p><strong>Concept only.</strong> Every company, symbol, price, score, and signal below is fictional. This is not financial advice or a promise of returns.</p>
+    </section>
+
+    <section class="ideas-section" id="ideas" aria-labelledby="ideas-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Today’s research board</p>
+          <h2 id="ideas-title">Ideas worth a closer look</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter ideas by horizon">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All <span>4</span></button>
+          <button class="filter" type="button" data-filter="short" aria-pressed="false">Short</button>
+          <button class="filter" type="button" data-filter="medium" aria-pressed="false">Medium</button>
+          <button class="filter" type="button" data-filter="long" aria-pressed="false">Long</button>
+        </div>
+      </div>
+
+      <div class="idea-grid" aria-live="polite">
+        <article class="idea-card featured" data-horizon="short">
+          <div class="card-topline">
+            <span class="horizon horizon-short">Short term · 2–6 weeks</span>
+            <span class="rank">01</span>
+          </div>
+          <div class="company">
+            <div class="company-symbol coral" aria-hidden="true">AH</div>
+            <div><h3>Atlas Harbour</h3><p>DEMO-01 · Materials</p></div>
+          </div>
+          <p class="thesis">Recent operational momentum and improving demand indicators support a near-term watchlist position.</p>
+          <div class="metrics">
+            <div><span>Evidence confidence</span><strong>78%</strong><div class="meter"><i style="width:78%"></i></div></div>
+            <div><span>Illustrative weight</span><strong>25%</strong><small>Balanced</small></div>
+          </div>
+          <div class="signals" aria-label="Signal categories"><span>Momentum</span><span>Demand</span><span>Quality</span></div>
+          <details>
+            <summary>Why this idea?<span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>Supporting evidence:</strong> Three independent fictional signal groups improved in the latest snapshot.</p>
+              <p><strong>Watch closely:</strong> Commodity sensitivity and short-horizon volatility.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="idea-card" data-horizon="medium">
+          <div class="card-topline">
+            <span class="horizon horizon-medium">Medium term · 3–9 months</span>
+            <span class="rank">02</span>
+          </div>
+          <div class="company">
+            <div class="company-symbol gold" aria-hidden="true">BS</div>
+            <div><h3>Brightspan</h3><p>DEMO-02 · Industrials</p></div>
+          </div>
+          <p class="thesis">A stronger project pipeline and steadier margins make the medium-term setup easier to understand.</p>
+          <div class="metrics">
+            <div><span>Evidence confidence</span><strong>73%</strong><div class="meter"><i style="width:73%"></i></div></div>
+            <div><span>Illustrative weight</span><strong>25%</strong><small>Balanced</small></div>
+          </div>
+          <div class="signals" aria-label="Signal categories"><span>Pipeline</span><span>Margins</span></div>
+          <details>
+            <summary>Why this idea?<span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>Supporting evidence:</strong> Fictional order-book and margin trends are aligned across two reporting periods.</p>
+              <p><strong>Watch closely:</strong> Project delays and cost inflation.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="idea-card" data-horizon="long">
+          <div class="card-topline">
+            <span class="horizon horizon-long">Long term · 2–5 years</span>
+            <span class="rank">03</span>
+          </div>
+          <div class="company">
+            <div class="company-symbol blue" aria-hidden="true">NC</div>
+            <div><h3>Northcoast Grid</h3><p>DEMO-03 · Utilities</p></div>
+          </div>
+          <p class="thesis">A durable investment pipeline and recurring demand create a measured long-term research case.</p>
+          <div class="metrics">
+            <div><span>Evidence confidence</span><strong>69%</strong><div class="meter"><i style="width:69%"></i></div></div>
+            <div><span>Illustrative weight</span><strong>30%</strong><small>Core</small></div>
+          </div>
+          <div class="signals" aria-label="Signal categories"><span>Durability</span><span>Cash flow</span></div>
+          <details>
+            <summary>Why this idea?<span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>Supporting evidence:</strong> The fictional case favours stable demand and a visible capital program.</p>
+              <p><strong>Watch closely:</strong> Regulation, rates, and execution risk.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="idea-card" data-horizon="long">
+          <div class="card-topline">
+            <span class="horizon horizon-long">Long term · 3–7 years</span>
+            <span class="rank">04</span>
+          </div>
+          <div class="company">
+            <div class="company-symbol mint" aria-hidden="true">WL</div>
+            <div><h3>Wattle Labs</h3><p>DEMO-04 · Technology</p></div>
+          </div>
+          <p class="thesis">Recurring revenue and disciplined reinvestment support a smaller, higher-uncertainty research position.</p>
+          <div class="metrics">
+            <div><span>Evidence confidence</span><strong>64%</strong><div class="meter"><i style="width:64%"></i></div></div>
+            <div><span>Illustrative weight</span><strong>20%</strong><small>Measured</small></div>
+          </div>
+          <div class="signals" aria-label="Signal categories"><span>Retention</span><span>Growth</span></div>
+          <details>
+            <summary>Why this idea?<span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>Supporting evidence:</strong> Fictional recurring-revenue quality offsets a less certain valuation signal.</p>
+              <p><strong>Watch closely:</strong> Valuation, competition, and customer concentration.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" aria-labelledby="method-title">
+      <div>
+        <p class="eyebrow">Designed for understanding</p>
+        <h2 id="method-title">No black-box claims on the screen.</h2>
+      </div>
+      <div class="method-grid">
+        <p><span>01</span><strong>Evidence first</strong>See the signal categories behind each idea.</p>
+        <p><span>02</span><strong>Time is explicit</strong>Every idea includes a horizon and snapshot time.</p>
+        <p><span>03</span><strong>Risk stays visible</strong>The case and the reasons it may fail sit together.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">TM</span><span>TraderMate</span></a>
+    <p>Illustrative public prototype · No live recommendations · Not financial advice</p>
+    <p>Built with care in Australia.</p>
+  </footer>
+</body>
+</html>
