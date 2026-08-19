@@ -2,6 +2,8 @@
 
 Public-facing prototype for TraderMate: a calm, plain-language dashboard concept for reviewing Australian-equity research ideas.
 
+Published with GitHub Pages at <https://langzonedev.github.io/TraderMate-Web/>.
+
 ## Prototype boundary
 
 - Uses fictional companies, symbols, prices, and signals.
@@ -19,6 +21,12 @@ Open `index.html` in a modern browser. No installation, build step, or environme
 - Expand “Why this idea?” evidence and risk summaries.
 - Keyboard-accessible controls and visible focus states.
 - Responsive card layout and an explicit illustrative-data notice.
+- Offline app-shell caching after the first successful visit.
+- A public explanation of the four research lenses without exposing private scoring weights.
+
+## Deployment
+
+Changes merged to `main` deploy through `.github/workflows/pages.yml`. The workflow publishes this repository as a static GitHub Pages site and requires no runtime, database, API key, or paid hosting service.
 
 ## Before connecting live data
 

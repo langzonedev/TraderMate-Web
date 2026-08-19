@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#132c2b">
   <meta name="description" content="TraderMate public dashboard concept using illustrative Australian-equity research ideas.">
+  <meta property="og:title" content="TraderMate — clearer market research">
+  <meta property="og:description" content="A calm, explainable dashboard concept for Australian-equity research.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://langzonedev.github.io/TraderMate-Web/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TraderMate — clearer market research">
+  <meta name="twitter:description" content="Four ideas. One clear view.">
+  <meta name="twitter:image" content="https://langzonedev.github.io/TraderMate-Web/og.png">
   <title>TraderMate — clearer market research</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -18,6 +27,7 @@
       <span>TraderMate</span>
     </a>
     <div class="header-actions">
+      <a class="header-link" href="#method">How it works</a>
       <span class="market-status"><span aria-hidden="true"></span> Illustrative mode</span>
       <button class="icon-button" type="button" id="theme-toggle" aria-label="Use dark theme" aria-pressed="false">
         <span aria-hidden="true">◐</span>
@@ -45,6 +55,31 @@
     <section class="notice" aria-label="Important prototype notice">
       <span class="notice-icon" aria-hidden="true">i</span>
       <p><strong>Concept only.</strong> Every company, symbol, price, score, and signal below is fictional. This is not financial advice or a promise of returns.</p>
+    </section>
+
+    <section class="pulse" aria-labelledby="pulse-title">
+      <div class="pulse-heading">
+        <p class="eyebrow">Market context</p>
+        <h2 id="pulse-title">Before the picks, read the room.</h2>
+        <p>Illustrative context keeps every idea grounded in the same market snapshot.</p>
+      </div>
+      <div class="pulse-grid">
+        <article>
+          <span>ASX 200 regime</span>
+          <strong>Constructive</strong>
+          <p>Broad trend is positive, with moderate participation.</p>
+        </article>
+        <article>
+          <span>Market volatility</span>
+          <strong>18 <small>/ 100</small></strong>
+          <p>Calmer than the fictional 90-day average.</p>
+        </article>
+        <article>
+          <span>Research coverage</span>
+          <strong>4 <small>qualified</small></strong>
+          <p>From 120 fictional companies screened today.</p>
+        </article>
+      </div>
     </section>
 
     <section class="ideas-section" id="ideas" aria-labelledby="ideas-title">
@@ -160,15 +195,45 @@
       </div>
     </section>
 
-    <section class="method" aria-labelledby="method-title">
+    <section class="research-stack" aria-labelledby="stack-title">
+      <div class="stack-heading">
+        <p class="eyebrow">One answer, many checks</p>
+        <h2 id="stack-title">Four lenses behind every idea.</h2>
+        <p>No single headline or chart gets to make the decision. The private research engine combines independent evidence, then publishes only a plain-language result.</p>
+      </div>
+      <div class="stack-list">
+        <article>
+          <span class="stack-number">01</span>
+          <div><h3>Market behaviour</h3><p>Price, volume, volatility, liquidity, trend and relative strength.</p></div>
+          <span class="stack-state">Demo ready</span>
+        </article>
+        <article>
+          <span class="stack-number">02</span>
+          <div><h3>Business quality</h3><p>Earnings, cash flow, balance sheet, valuation and capital allocation.</p></div>
+          <span class="stack-state">Demo ready</span>
+        </article>
+        <article>
+          <span class="stack-number">03</span>
+          <div><h3>Events and evidence</h3><p>ASX releases, leadership changes, corporate actions and corroborated news.</p></div>
+          <span class="stack-state">Demo ready</span>
+        </article>
+        <article>
+          <span class="stack-number">04</span>
+          <div><h3>Economic setting</h3><p>Rates, inflation, currency, commodities and sector-specific conditions.</p></div>
+          <span class="stack-state">Demo ready</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" id="method" aria-labelledby="method-title">
       <div>
         <p class="eyebrow">Designed for understanding</p>
-        <h2 id="method-title">No black-box claims on the screen.</h2>
+        <h2 id="method-title">A shortlist, not a shortcut.</h2>
       </div>
       <div class="method-grid">
-        <p><span>01</span><strong>Evidence first</strong>See the signal categories behind each idea.</p>
-        <p><span>02</span><strong>Time is explicit</strong>Every idea includes a horizon and snapshot time.</p>
-        <p><span>03</span><strong>Risk stays visible</strong>The case and the reasons it may fail sit together.</p>
+        <p><span>01</span><strong>Evidence first</strong>Each idea must pass independent market, business, event and macro checks.</p>
+        <p><span>02</span><strong>Time is explicit</strong>Every result includes its intended horizon, freshness and expiry.</p>
+        <p><span>03</span><strong>Risk stays visible</strong>The supporting case and the reasons it may fail always sit together.</p>
       </div>
     </section>
   </main>
