@@ -17,7 +17,8 @@ Install dependencies with `npm install`, then run `npm run dev`. No environment 
 
 ## Current product surface
 
-- Short, mid and long segmented views with four compact observation cards in each view.
+- Short, mid and long segmented views with four Current observations per horizon.
+- A Tracking view for displaced observations that remain active until their original review dates.
 - Reference price, observation window, signal strength and review date.
 - Historical outcome rate calculated only from completed live observations.
 - Responsive one-, two- and four-column layouts.

@@ -1,18 +1,20 @@
 import { confidenceLabel, formatDate, formatMoney } from "../format";
-import type { MarketObservation } from "../types";
+import type { MarketObservation, ObservationCollection } from "../types";
 
 interface ObservationCardProps {
   observation?: MarketObservation;
   position: number;
+  collection: ObservationCollection;
 }
 
-export function ObservationCard({ observation, position }: ObservationCardProps) {
+export function ObservationCard({ observation, position, collection }: ObservationCardProps) {
+  const collectionLabel = collection === "current" ? "Current" : "Tracking";
   if (!observation) {
     return (
       <article className="observation-card observation-card--pending" aria-label={`Observation ${position} awaiting live data`}>
         <div className="observation-card__meta">
           <span>ASX: —</span>
-          <span>Observation {position}</span>
+          <span>{collectionLabel} {position}</span>
         </div>
         <div className="observation-card__primary">
           <p className="micro-label">Market observation</p>
@@ -36,10 +38,10 @@ export function ObservationCard({ observation, position }: ObservationCardProps)
     <article className="observation-card" aria-label={`Observation ${position}: ${observation.companyName}`}>
       <div className="observation-card__meta">
         <span>{observation.exchange}: {observation.symbol}</span>
-        <span>Observation {position}</span>
+        <span>{collectionLabel} {position}</span>
       </div>
       <div className="observation-card__primary">
-        <p className="micro-label">Market observation</p>
+        <p className="micro-label">{collectionLabel} observation</p>
         <h2>{observation.companyName}</h2>
         <p>{observation.sector}</p>
       </div>

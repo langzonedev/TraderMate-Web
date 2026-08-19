@@ -1,7 +1,9 @@
 export type Horizon = "short" | "medium" | "long";
+export type ObservationCollection = "current" | "tracking";
 
 export interface MarketObservation {
   horizon: Horizon;
+  collection: ObservationCollection;
   rank: number;
   durationLabel: string;
   symbol: string;
@@ -20,6 +22,9 @@ export interface ModelOutcome {
   id: string;
   status: "complete";
   positive: boolean;
+  horizon: Horizon;
+  modelVersion: string;
+  returnPercent: number;
 }
 
 export interface MarketSnapshot {
